@@ -1,1 +1,1 @@
-from ziptie.utils.crud import insert_data
+from ziptie.utils.crud import get_data, insert_data
