@@ -8,3 +8,4 @@ from ziptie.schema.teacher import (
     TeacherResponse,
     TeacherResponseData,
 )
+from ziptie.schema.yearbook import YearbookResponse, YearbookResponseData
