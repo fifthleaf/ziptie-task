@@ -5,6 +5,12 @@ Solution to the recruitment task for the position of Python Developer at ZipTie.
 
 ## Quickstart
 
+Create environment:
+```Bash
+python -m venv myenv
+source myenv/bin/activate
+```
+
 Install dependencies:
 ```Bash
 pip install -r requirements.txt
@@ -20,7 +26,12 @@ Run application:
 uvicorn ziptie.main:app --app-dir src --reload
 ```
 
-Behaviour tested with Python version 3.12.4.
+Behaviour tested with Python version 3.12.4, API documentation can be accessed at `http://127.0.0.1:8000/docs`.
+
+Implemented endpoints:
+- `/create/teacher`
+- `/create/student`
+- `/yearbook/{teacher_id}`
 
 
 ## Configuration
