@@ -1,0 +1,39 @@
+repos:
+  - repo: local
+    hooks:
+      - id: isort
+        name: isort
+        entry: isort
+        language: python
+        types: [python]
+        stages: [commit]
+      - id: black
+        name: black
+        entry: black
+        language: python
+        types: [python]
+        stages: [commit]
+      - id: flake8
+        name: flake8
+        entry: pflake8
+        language: python
+        types: [python]
+        stages: [commit]
+      - id: pylint
+        name: pylint
+        entry: pylint
+        language: python
+        types: [python]
+        stages: [commit]
+      - id: bandit
+        name: bandit
+        entry: bandit
+        language: python
+        types: [python]
+        stages: [commit]
+      - id: mypy
+        name: mypy
+        entry: mypy
+        language: python
+        types: [python]
+        stages: [commit]

@@ -1,1 +1,14 @@
+[tool.black]
+line-length = 79
 
+[tool.flake8]
+ignore = ["F401"]
+
+[tool.isort]
+profile = "black"
+
+[tool.pylint]
+disable = """
+    too-few-public-methods,
+    missing-module-docstring,
+"""
