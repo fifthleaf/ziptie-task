@@ -36,3 +36,32 @@ async def create_teacher(
         raise HTTPException(
             status_code=500, detail="Something went wrong"
         ) from exc
+
+
+@app.post("/create/student")
+async def create_student(
+    student_data: Annotated[schema.StudentRequest, Body()]
+) -> schema.StudentResponse:
+    """
+    Creates a new student in the database.
+
+        Args:
+            student_data: The student data to be created.
+
+        Returns:
+            Success message and the created student data.
+    """
+    try:
+        student = db.Student(**student_data.model_dump())
+        with db.local_session() as session:
+            utils.insert_data(session, student)
+        return schema.StudentResponse(
+            message="Student created successfully",
+            data=schema.StudentResponseData.from_orm(student),
+        )
+    except HTTPException as exc:
+        raise exc
+    except Exception as exc:
+        raise HTTPException(
+            status_code=500, detail="Something went wrong"
+        ) from exc
